@@ -1,0 +1,24 @@
+body{
+    background-color: #B91450;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+.box{
+    disp
+    background-color: beige;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+#price{
+    font-weight: bold;
+    color: red;
+    font-size: 5rem;
+}
+
+/* Utility classes */
+.text-white{
+    color: white;
+}
