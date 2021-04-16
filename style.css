@@ -5,12 +5,36 @@ main{
     display: flex;
     justify-content: center;
 }
+form{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+}
 .box{
-    disp
     background-color: beige;
     border-radius: 20px;
     margin-top: 20px;
     padding: 20px;
+}
+.box-form{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+.box-submit-form{
+    display: flex;
+    justify-content: center;
+}
+.my-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.my-input{
+    width: 70%;
+}
+.my-btn{
+
 }
 #price{
     font-weight: bold;
