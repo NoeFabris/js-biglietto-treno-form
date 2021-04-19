@@ -1,3 +1,4 @@
+var sfondo = getElemen
 var km = prompt("Distance to travel in km");
 var age = prompt("Your Age");
 console.log(km);

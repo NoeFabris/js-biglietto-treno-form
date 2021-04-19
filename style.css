@@ -1,7 +1,7 @@
 body{
     background-color: #B91450;
 }
-main{
+section{
     display: flex;
     justify-content: center;
 }
@@ -11,8 +11,14 @@ form{
     flex-direction: column;
 }
 .box{
-    background-color: beige;
+    background-color: white;
     border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+.box2{
+    background-color: white;
+    border-radius: 0px;
     margin-top: 20px;
     padding: 20px;
 }
@@ -34,15 +40,34 @@ form{
     width: 70%;
 }
 .my-btn{
-
-}
-#price{
+    color: #B91450;
+    background-color: lightgrey;
     font-weight: bold;
-    color: red;
-    font-size: 5rem;
+    margin: 0 10px;
+}
+.my-btn:hover{
+    color: #B91450;
+    background-color: lightgrey;
+    font-weight: bold;
+    border: 1px solid #B91450;
+}
+.ticket{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 20px 0;
 }
 
 /* Utility classes */
 .text-white{
     color: white;
+}
+.bg-grey{
+    border: 1px solid black;
+    background-color: grey;
+}
+.border-top-bot{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
