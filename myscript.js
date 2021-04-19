@@ -6,9 +6,9 @@ window.addEventListener('load', function(){
     mainForm.addEventListener('submit', onSubmit)
 })
 
-var fullName = document.getElementById('user-name')
-var km
-var ageGroup
+var fullName = document.getElementById('fullName')
+var km = document.getElementById('km')
+var ageGroup = document.getElementById('ageGroup')
 
 function onSubmit(event){
     event.preventDefault()
@@ -18,10 +18,11 @@ function onSubmit(event){
     // recupera gli es dal form 
     var elements = form.elements
 
-    fullName += elements.fullName.value
+    fullName = elements.fullName.value
+    document.getElementById('user-name').innerHTML = '<strong>' + fullName + '</strong>'
     km = elements.km.value
     ageGroup = elements.ageGroup.value
-    
+
 
 
     console.log(elements)
@@ -29,30 +30,52 @@ function onSubmit(event){
     console.log('km = ' + km)
     console.log('Fascia d/eta = ' + ageGroup)
 
-    if ((km > 0) && (ageGroup >= 0)) {
-        if (ageGroup == 'Minorenne') {
-            var price = km * 0.21;
-            var price20 = (price - (price * 20 / 100)).toFixed(2);
-            console.log(price20);
-            // document.getElementById('price').innerHTML= price20 ;
-        } else {
-            if (ageGroup == 'Maggiorenne') {
+
+    if (km > 0){
+        switch (ageGroup) {
+            case 'maggiorenne':
                 var price = km * 0.21;
                 console.log(price);
-                // document.getElementById('price').innerHTML= price ;
-            } else {
+                document.getElementById('tariffa').innerHTML = ageGroup
+                document.getElementById('cost').innerHTML = price
+                break;
+        
+            case 'minorenne':
+                var price = km * 0.21;
+                var price20 = (price - (price * 20 / 100)).toFixed(2);
+                console.log(price20);
+                document.getElementById('tariffa').innerHTML = ageGroup
+                document.getElementById('cost').innerHTML = price20
+            break;
+            case 'over65':
                 var price = km * 0.21;
                 var price40 = (price - (price * 40 / 100)).toFixed(2);
                 console.log(price40);
-                // document.getElementById('price').innerHTML= price40 ;
-            }
-        }
+                document.getElementById('tariffa').innerHTML = ageGroup
+                document.getElementById('cost').innerHTML = price40
+            break;
+        
+            default:
+                break;
+        } 
     } else {
         if (isNaN(km)) {
-            // document.getElementById('price').innerHTML= "Please insert KM in numbers" ;
+            alert('Inserisci i KM in numeri')
         }
     }
-
+    function numGenerator(numero) {
+        return numero = Math.floor(Math.random() * 10)
+    }
+    var carrozza = numGenerator()
+    var cpCode = ''
+    for (let i = 0; i < 5; i++) {
+        var num = numGenerator()
+        console.log(num)
+        cpCode += num
+        
+    }
+    document.getElementById('carrozza').innerHTML = carrozza
+    document.getElementById('cp-code').innerHTML = cpCode
 }
 
 // console.log('nome = ' + fullName)
